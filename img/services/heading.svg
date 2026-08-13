@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B0E17"/><stop offset="1" stop-color="#141A2B"/>
+    </linearGradient>
+    <radialGradient id="auroraC"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="auroraV"><stop offset="0" stop-color="#7C6CFF" stop-opacity="0.30"/><stop offset="1" stop-color="#7C6CFF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="fade"><rect width="1600" height="900" fill="url(#fadeGrad)"/></mask>
+    <linearGradient id="accent" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#7C6CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#ground)"/>
+  <ellipse cx="672" cy="211" rx="832" ry="414" fill="url(#auroraC)"/>
+  <ellipse cx="1069" cy="590" rx="736" ry="378" fill="url(#auroraV)"/>
+  <rect width="1600" height="900" fill="url(#grid)" mask="url(#fade)"/>
+<circle cx="91.54907095944509" cy="851.0436287352786" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="903.03220427013" cy="370.97402509025414" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="582.7716511761537" cy="763.660630987215" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="474.3544979915896" cy="187.05742479653054" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="861.8700463615824" cy="320.67174088282627" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="178.42583531164564" cy="274.0034351215945" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="57.226785633247346" cy="197.01658090085402" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1446.8128734268248" cy="355.196227470733" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="324.81897672405466" cy="740.6635372834717" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="664.4345392007381" cy="784.7864206365921" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1594.1778860636987" cy="259.51390050482587" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="340.86005491553806" cy="771.6077196346305" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="852.8501270484412" cy="547.2398632056502" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1528.3720886370843" cy="760.4320931705479" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1437.6343866810203" cy="235.138947847596" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="428.64033291116357" cy="726.4206639220356" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="854.9261391744949" cy="154.5122374683342" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1342.6848430070095" cy="435.2494385353202" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="502.6623442885466" cy="528.8555535842897" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1368.3919444680214" cy="441.9400305750605" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="446.70304517494515" cy="444.90456876548706" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1250.055380386766" cy="520.8455934651283" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="605.0597664841916" cy="562.1323360211682" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1208.1536167563172" cy="286.78350830214185" r="2" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="1485.1510361593682" cy="302.03094010037603" r="3.4" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="830.1558733335696" cy="719.0696434873462" r="2" fill="#FFFFFF" fill-opacity="0.45"/><path d="M324.81897672405466 740.6635372834717L664.4345392007381 784.7864206365921" fill="none" stroke="#22D3EE" stroke-opacity="0.16" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M-40 840 C400 710 1200 710 1640 840" fill="none" stroke="#22D3EE" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M-40 880 C400 750 1200 750 1640 880" fill="none" stroke="#7C6CFF" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,916 @@
+/* ============================================================================
+   NimbleJinn theme layer
+   ----------------------------------------------------------------------------
+   Loaded LAST, after the base template stylesheets. Everything that makes the
+   site look like NimbleJinn rather than a stock Bootstrap template lives here.
+   Base template rules stay untouched in style.css so they can be replaced
+   wholesale later without losing the brand.
+
+   Sections:
+     1. Tokens          6. Cards
+     2. Base typography 7. Features / icons
+     3. Navbar          8. People
+     4. Hero            9. Forms
+     5. Dark bands     10. Footer / misc
+   ============================================================================ */
+
+
+/* 1. TOKENS ================================================================ */
+
+:root {
+  /* Ink — the dark end. Bands, hero, footer. */
+  --ink:            #0B0E17;
+  --ink-2:          #131828;
+  --ink-3:          #1C2338;
+  --ink-line:       rgba(255, 255, 255, 0.10);
+
+  /* Paper — the light end. Body content. */
+  --paper:          #FFFFFF;
+  --paper-2:        #F7F9FC;
+  --paper-3:        #EDF1F7;
+  --paper-line:     rgba(11, 14, 23, 0.10);
+
+  /* Text */
+  --text:           #1A2036;
+  --text-muted:     #5A6480;
+  --text-on-ink:    #E8ECF6;
+  --text-on-ink-muted: #9AA5C0;
+
+  /* Accents */
+  --cyan:           #22D3EE;
+  --cyan-deep:      #0EA5C4;
+  --violet:         #7C6CFF;
+  --violet-deep:    #5B4BD6;
+
+  /* Roles */
+  --title-color:        var(--text);
+  --title-on-ink:       #FFFFFF;
+  --link-color:         var(--cyan-deep);
+  --link-color-focused: var(--violet-deep);
+  --link-underline-color: rgba(14, 165, 196, 0.28);
+  --link-underline-color-focused: rgba(91, 75, 214, 0.30);
+
+  --button-gradient-start: var(--cyan);
+  --button-gradient-end:   var(--violet);
+
+  --menu-header-link-color-focused: var(--cyan-deep);
+  --bar-transparency-color: #FFFFFF;
+
+  /* Geometry */
+  --radius:      14px;
+  --radius-sm:   10px;
+  --shell:       1180px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+
+/* 2. BASE TYPOGRAPHY ======================================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--title-color) !important;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.15;
+  /* The base template Title-Cases every heading, which wrecks sentence case
+     ("The Studio Sharpens The Shop"). Headings say what they were written as. */
+  text-transform: none;
+}
+
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+h3 { font-size: 1.25rem; }
+
+p:not(:first-child) { margin-top: 12px; }
+
+/* The base template's `.section-title h2 { text-transform: capitalize }` is more
+   specific than the blanket heading rule above, so restate it here. */
+.section-title h2 { text-transform: none; }
+
+/* An eyebrow above a section title: small, spaced, accent-coloured. */
+.section-title > h5 {
+  color: var(--cyan-deep) !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title > p { font-size: 18px; color: var(--text-muted); }
+
+.larger-text { font-size: 1.05em; }
+
+.lead-text {
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+/* The signature typographic device: short declarative lines, one per row. */
+.staccato {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.keyword { font-weight: 600; color: var(--text); }
+
+.accent-rule {
+  width: 56px;
+  height: 3px;
+  border: 0;
+  border-radius: 2px;
+  margin: 22px 0;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  opacity: 1;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline !important;
+  text-decoration-color: var(--link-underline-color) !important;
+  text-underline-offset: 3px;
+  transition: color 0.25s var(--ease), text-decoration-color 0.25s var(--ease);
+}
+
+a:hover, a:focus {
+  color: var(--link-color-focused);
+  text-decoration-color: var(--link-underline-color-focused) !important;
+}
+
+a:not([href]) { text-decoration: none !important; }
+
+/* Anchor targets sit under the fixed navbar without the heading hiding. */
+:target { scroll-margin-top: 110px; }
+
+
+/* 3. NAVBAR ================================================================ */
+
+/* The base template floats a transparent navbar over the dark hero, then swaps
+   to a solid bar once scrolled (.is-sticky, applied by main.js). That is
+   exactly the hybrid treatment we want, so keep the behaviour and restyle it.
+   Top state: white links on ink. Sticky state: dark links on frosted white. */
+
+.navbar-area::before { background: none; }
+
+.navbar-area.is-sticky {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid var(--paper-line);
+  backdrop-filter: saturate(150%) blur(10px);
+  box-shadow: 0 2px 28px rgba(11, 14, 23, 0.08);
+}
+
+.site-nav .navbar .navbar-nav .nav-item a,
+.site-nav .navbar .navbar-nav .nav-item .dropdown-menu li a {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+/* Over the hero. */
+.site-nav .navbar .navbar-nav .nav-item:hover > a,
+.site-nav .navbar .navbar-nav .nav-item:focus > a,
+.site-nav .navbar .navbar-nav .nav-item.active > a {
+  color: var(--cyan);
+}
+
+/* Scrolled. */
+.navbar-area.is-sticky .site-nav .navbar .navbar-nav .nav-item > a {
+  color: var(--text);
+}
+
+.navbar-area.is-sticky .site-nav .navbar .navbar-nav .nav-item:hover > a,
+.navbar-area.is-sticky .site-nav .navbar .navbar-nav .nav-item:focus > a,
+.navbar-area.is-sticky .site-nav .navbar .navbar-nav .nav-item.active > a {
+  color: var(--menu-header-link-color-focused);
+}
+
+.site-nav .navbar .navbar-nav .nav-item .dropdown-menu {
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 18px 44px rgba(11, 14, 23, 0.14);
+  overflow: hidden;
+}
+
+.site-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
+.site-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
+.site-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
+  color: var(--link-color-focused);
+}
+
+/* Sub-items rendered under a group label (see menu.ejs). */
+.site-nav .navbar .navbar-nav .nav-item.indented a { padding-left: 30px; }
+
+/* Brand lockup: SVG mark + live webfont wordmark. Text stays HTML rather than
+   being baked into the SVG, because an SVG loaded through <img> cannot use the
+   page's webfonts and would silently fall back to a system sans. */
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+}
+
+.brand-mark { width: 40px; height: 40px; display: block; }
+
+.brand-word {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.38rem;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  transition: color 0.3s var(--ease);
+  white-space: nowrap;
+}
+
+.navbar-area.is-sticky .brand-word { color: var(--text); }
+.footer-section .brand-word { color: #FFFFFF; }
+
+.site-responsive-nav .logo { position: relative; width: 50%; z-index: 0; }
+
+@media only screen and (max-width: 767px) {
+  .brand-mark { width: 34px; height: 34px; }
+  .brand-word { font-size: 1.18rem; }
+}
+
+
+/* 4. BUTTONS =============================================================== */
+
+.button {
+  background: linear-gradient(92deg, var(--button-gradient-start) 0%,
+                                     var(--button-gradient-end) 100%);
+  color: #06121A;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  /* The base template Title-Cases every button; sentence case reads better. */
+  text-transform: none;
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.button:hover {
+  color: #06121A;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(34, 211, 238, 0.28),
+              0 10px 34px rgba(124, 108, 255, 0.34);
+}
+
+/* Ghost variant — for secondary CTAs, legible on ink. */
+.button.ghost {
+  background: transparent;
+  color: var(--text-on-ink);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+}
+
+.button.ghost:hover {
+  color: #FFFFFF;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.35);
+}
+
+/* Ghost on a light background. */
+.button.ghost.on-paper {
+  color: var(--text);
+  border-color: var(--paper-line);
+}
+
+.button.ghost.on-paper:hover { color: var(--link-color-focused); border-color: var(--cyan); }
+
+.back-to-top { background: var(--ink-2); }
+.back-to-top:before { background: var(--ink); }
+
+
+/* 5. HERO & DARK BANDS ===================================================== */
+
+/* Shared ink surface: near-black, cyan/violet aurora, faint engineering grid. */
+.ink-surface {
+  position: relative;
+  background-color: var(--ink);
+  color: var(--text-on-ink);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ink-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60rem 30rem at 18% -10%, rgba(34, 211, 238, 0.20), transparent 62%),
+    radial-gradient(52rem 28rem at 88% 8%,  rgba(124, 108, 255, 0.22), transparent 60%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+}
+
+/* 48px grid, fading out toward the bottom. */
+.ink-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 78%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 78%);
+  pointer-events: none;
+}
+
+.ink-surface h1, .ink-surface h2, .ink-surface h3,
+.ink-surface h4, .ink-surface h5, .ink-surface h6 {
+  color: var(--title-on-ink) !important;
+}
+
+.ink-surface p { color: var(--text-on-ink-muted); }
+.ink-surface .section-title > h5 { color: var(--cyan) !important; }
+
+/* Muted greys chosen for paper are unreadable on ink — restate them. */
+.ink-surface .section-title > p,
+.ink-surface .nj-card p,
+.ink-surface .features-text-info p,
+.ink-surface .larger-text,
+.ink-surface .lead-text,
+.ink-surface .person-summary { color: var(--text-on-ink-muted); }
+
+/* .keyword is near-black by default, which disappears entirely on a dark band. */
+.ink-surface .keyword,
+.ink-surface strong { color: #FFFFFF; }
+.ink-surface a { color: var(--cyan); text-decoration-color: rgba(34, 211, 238, 0.35) !important; }
+.ink-surface a:hover { color: #FFFFFF; }
+
+/* ...but a button is not a link: it keeps its own colour, or its label would
+   be cyan text on a cyan gradient. */
+.ink-surface a.button { color: #06121A; }
+.ink-surface a.button.ghost { color: var(--text-on-ink); }
+.ink-surface a.button.ghost:hover { color: #FFFFFF; }
+
+/* The page-title strip the layout renders on every non-home page. */
+.page-title-area {
+  background-color: var(--ink);
+  background-size: cover;
+  background-position: center;
+  padding: 168px 0 96px;
+}
+
+.page-title-area::before {
+  background:
+    linear-gradient(180deg, rgba(11, 14, 23, 0.86) 0%, rgba(11, 14, 23, 0.94) 100%),
+    radial-gradient(48rem 24rem at 12% 0%, rgba(34, 211, 238, 0.22), transparent 60%),
+    radial-gradient(44rem 22rem at 90% 20%, rgba(124, 108, 255, 0.24), transparent 60%);
+  opacity: 1;
+}
+
+.page-title-content h2 {
+  color: #FFFFFF !important;
+  font-size: clamp(2.3rem, 4.6vw, 3.4rem);
+}
+
+.page-title-content { text-align: center; }
+
+.page-title-content > div {
+  color: var(--text-on-ink-muted);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  max-width: 70ch;
+  /* Auto side margins are load-bearing: max-width alone leaves this block
+     flush-left inside the centred container, so the subtitle reads off-centre
+     even though its text is centred within the narrower box. */
+  margin: 14px auto 0;
+}
+
+.page-title-content .pill { margin-bottom: 18px; }
+
+/* Home hero — taller, with the staccato line stack. */
+.hero {
+  padding: 190px 0 120px;
+  text-align: left;
+}
+
+.hero h1 { margin-bottom: 8px; }
+
+.hero .hero-sub {
+  color: var(--text-on-ink-muted);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  max-width: 60ch;
+  margin-top: 20px;
+}
+
+.hero .hero-lines {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  color: var(--cyan);
+  letter-spacing: 0.02em;
+  margin-top: 26px;
+}
+
+.hero .hero-lines span::after {
+  content: "·";
+  margin: 0 12px;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.hero .hero-lines span:last-child::after { content: ""; margin: 0; }
+
+.hero-actions { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Full-bleed dark section between light content. */
+.band { padding: 84px 0; }
+
+.band-tight { padding: 56px 0; }
+
+/* Numbers / claims row. */
+.stat-strip { display: flex; flex-wrap: wrap; gap: 28px; }
+
+.stat-strip .stat { flex: 1 1 200px; }
+
+.stat-strip .stat-value {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  background: linear-gradient(92deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-strip .stat-label {
+  color: var(--text-on-ink-muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+/* CTA strip. */
+.cta-band .cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.cta-band h2 { margin-bottom: 6px; }
+.cta-band p { margin-top: 4px; max-width: 56ch; }
+
+
+/* 6. CARDS ================================================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 44px;
+}
+
+/* Four cards in an auto-fit grid land 3+1, which reads as a mistake.
+   Sets of four ask for it explicitly. */
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+@media screen and (max-width: 720px) {
+  .card-grid.cols-2 { grid-template-columns: 1fr; }
+}
+
+.nj-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 30px 26px 26px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+              border-color 0.3s var(--ease);
+  overflow: hidden;
+}
+
+/* Accent hairline that wipes in along the top edge on hover. */
+.nj-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.nj-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 18px 46px rgba(11, 14, 23, 0.12);
+}
+
+.nj-card:hover::before { transform: scaleX(1); }
+
+.nj-card h3 { margin-bottom: 10px; }
+.nj-card p  { color: var(--text-muted); font-size: 1rem; }
+
+.nj-card .card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.nj-card .card-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+}
+
+.nj-card .card-link::after {
+  content: " \2192";
+  transition: margin-left 0.25s var(--ease);
+}
+
+.nj-card:hover .card-link::after { margin-left: 5px; }
+
+/* Cards sitting on an ink surface. */
+.ink-surface .nj-card {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--ink-line);
+}
+
+.ink-surface .nj-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.5);
+}
+
+/* Compact list of short claims, used under section intros. */
+.tick-list { list-style: none; padding: 0; margin: 18px 0 0; }
+
+.tick-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-top: 9px;
+  color: var(--text-muted);
+}
+
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 9px; height: 9px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+}
+
+.ink-surface .tick-list li { color: var(--text-on-ink-muted); }
+
+
+/* 7. SECTIONS, SIDE IMAGES, FEATURES ======================================= */
+
+.section-padding { padding: 84px 0; }
+
+.side-image { display: flex; flex-direction: row; gap: 34px; align-items: center; }
+.side-image.reverse { flex-direction: row-reverse; }
+
+.side-image > img {
+  flex-basis: 40%;
+  width: 40%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--paper-line);
+  overflow: hidden;
+}
+
+.side-image > div {
+  flex-basis: 60%;
+  width: 60%;
+  font-size: 1.05rem;
+}
+
+.side-image > div > p:not(:first-child) { margin-top: 16px; }
+
+/* Icon tints for the features grid — indexes referenced by features.ejs. */
+.filter-00 { filter: brightness(0) saturate(100%) invert(74%) sepia(58%) saturate(2476%) hue-rotate(140deg) brightness(96%) contrast(89%); }
+.filter-01 { filter: brightness(0) saturate(100%) invert(48%) sepia(72%) saturate(3416%) hue-rotate(224deg) brightness(101%) contrast(101%); }
+.filter-02 { filter: brightness(0) saturate(100%) invert(62%) sepia(93%) saturate(1732%) hue-rotate(153deg) brightness(95%) contrast(91%); }
+.filter-03 { filter: brightness(0) saturate(100%) invert(39%) sepia(83%) saturate(1926%) hue-rotate(232deg) brightness(96%) contrast(96%); }
+.filter-04 { filter: brightness(0) saturate(100%) invert(80%) sepia(38%) saturate(982%) hue-rotate(131deg) brightness(98%) contrast(92%); }
+.filter-05 { filter: brightness(0) saturate(100%) invert(33%) sepia(64%) saturate(2894%) hue-rotate(238deg) brightness(93%) contrast(97%); }
+.filter-06 { filter: brightness(0) saturate(100%) invert(55%) sepia(88%) saturate(1315%) hue-rotate(151deg) brightness(93%) contrast(90%); }
+.filter-07 { filter: brightness(0) saturate(100%) invert(45%) sepia(90%) saturate(2600%) hue-rotate(220deg) brightness(99%) contrast(99%); }
+.filter-08 { filter: brightness(0) saturate(100%) invert(70%) sepia(70%) saturate(1500%) hue-rotate(146deg) brightness(97%) contrast(90%); }
+.filter-09 { filter: brightness(0) saturate(100%) invert(41%) sepia(75%) saturate(2200%) hue-rotate(228deg) brightness(97%) contrast(98%); }
+.filter-10 { filter: brightness(0) saturate(100%) invert(66%) sepia(80%) saturate(1900%) hue-rotate(148deg) brightness(96%) contrast(92%); }
+
+.single-features-item {
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  height: 100%;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+              border-color 0.3s var(--ease);
+}
+
+.single-features-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 18px 46px rgba(11, 14, 23, 0.12);
+}
+
+.features-icon img { width: 42px; height: 42px; }
+
+.features-text-info h3 { margin: 16px 0 8px; }
+.features-text-info p  { color: var(--text-muted); font-size: 1rem; }
+
+
+/* 8. PEOPLE ================================================================ */
+
+/* Structure lives here rather than in an inline <style> inside people.ejs, so
+   the theme layer stays the single place the look is decided. */
+
+/* A grid rather than centred flex-wrap: four people should read as one row of
+   four, not three-and-a-stray. */
+.person-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0 0;
+}
+
+.person-card {
+  width: auto;
+  perspective: 1000px;
+  border-radius: var(--radius);
+  transition: box-shadow 0.2s var(--ease);
+}
+
+.person-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease);
+}
+
+.person-card:hover .person-card-inner { transform: rotateY(180deg); }
+
+.person-card-front, .person-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.person-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  font-size: 0.98rem;
+}
+
+.person-img {
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.person-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.person-title { margin-bottom: 0.75rem; text-align: center; }
+
+.person-summary {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.person-card { border-radius: var(--radius); }
+
+.person-card-front, .person-card-back {
+  border-radius: var(--radius);
+  border: 1px solid var(--paper-line);
+}
+
+.person-card-front { background: var(--paper); }
+
+.person-card-back {
+  background: var(--ink);
+  color: var(--text-on-ink-muted);
+  border-color: var(--ink-line);
+}
+
+.person-card-back strong { color: #FFFFFF; }
+
+.person-img {
+  border-radius: var(--radius-sm);
+  width: 108px;
+  height: 108px;
+  border: 1px solid var(--paper-line);
+}
+
+.person-name { font-family: "Space Grotesk", sans-serif; }
+
+.person-title {
+  color: var(--cyan-deep);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+/* 9. FORMS ================================================================= */
+
+.form-control {
+  background: var(--paper-2);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 14px 16px;
+  height: auto;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.form-control:focus {
+  background: var(--paper);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.16);
+  outline: none;
+}
+
+.form-control::placeholder { color: #9AA3BC; }
+
+
+/* 10. FOOTER & MISC ======================================================== */
+
+.footer-section {
+  background: var(--ink);
+  color: var(--text-on-ink-muted);
+  padding: 76px 0 44px;
+  border-top: 1px solid var(--ink-line);
+}
+
+.footer-section h3 {
+  color: #FFFFFF !important;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.footer-section p, .footer-section span { color: var(--text-on-ink-muted); }
+
+.footer-link { list-style: none; padding: 0; }
+.footer-link li { margin-bottom: 9px; }
+
+.footer-section a {
+  color: #B6BFD6;
+  text-decoration: none !important;
+}
+
+.footer-section a:hover { color: var(--cyan); }
+
+.footer-info-contact { margin-bottom: 16px; }
+.footer-info-contact h6 {
+  color: #FFFFFF !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* The base template hard-codes #333 on these at a higher specificity, which is
+   invisible on ink. The left padding reserved room for icon glyphs we dropped. */
+.footer-content .footer-info-contact { padding-left: 0; }
+
+.footer-content .footer-info-contact span,
+.footer-content .footer-info-contact span a {
+  color: #B6BFD6;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.footer-content .footer-info-contact span a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  background: var(--ink);
+  border-top: 1px solid var(--ink-line);
+  padding: 22px 0;
+}
+
+.footer-bottom p { color: #6E7897; margin: 0; font-size: 0.9rem; }
+
+/* Status pill — "In development", "Coming soon". */
+.pill {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  color: var(--cyan);
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.ink-surface .pill { color: var(--cyan); }
+
+
+/* RESPONSIVE =============================================================== */
+
+@media screen and (max-width: 991px) {
+  .page-title-area { padding: 140px 0 72px; }
+  .hero { padding: 150px 0 96px; }
+}
+
+@media screen and (max-width: 720px) {
+  body { font-size: 16px; }
+
+  .section-padding { padding: 52px 0; }
+  .band { padding: 56px 0; }
+
+  .side-image:not(.reverse), .side-image.reverse {
+    flex-direction: column-reverse;
+    gap: 22px;
+  }
+
+  .side-image > img,
+  .side-image > div { width: 100%; flex-basis: 100%; }
+
+  .side-image > img { max-height: 260px; }
+
+  .cta-band .cta-inner { flex-direction: column; align-items: flex-start; }
+
+  .hero-actions { width: 100%; }
+  .hero-actions .button { flex: 1 1 auto; text-align: center; }
+}
+
+@media only screen and (max-width: 767px) {
+  .logo, .white-logo, .black-logo { max-height: 56px; }
+}
+
+@media screen and (max-width: 991px) {
+  .person-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+}
+
+@media screen and (max-width: 575px) {
+  .person-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .person-card { max-width: 340px; margin: 0 auto; }
+}
+
+/* Flip-on-hover is a pointer affordance; on touch and for users who ask for
+   reduced motion, show the front face and let the summary carry the card. */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .person-card:hover .person-card-inner { transform: none; }
+  .person-card-back { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

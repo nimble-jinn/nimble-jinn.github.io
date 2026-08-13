@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+<defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B0E17"/><stop offset="1" stop-color="#141A2B"/>
+    </linearGradient>
+    <radialGradient id="auroraC"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="auroraV"><stop offset="0" stop-color="#7C6CFF" stop-opacity="0.30"/><stop offset="1" stop-color="#7C6CFF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="fade"><rect width="1200" height="900" fill="url(#fadeGrad)"/></mask>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#7C6CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#ground)"/>
+  <ellipse cx="324" cy="242" rx="624" ry="414" fill="url(#auroraC)"/>
+  <ellipse cx="766" cy="671" rx="552" ry="378" fill="url(#auroraV)"/>
+  <rect width="1200" height="900" fill="url(#grid)" mask="url(#fade)"/>
+<path d="M600 556 L900 604 L600 652 L300 604 Z"
+            fill="#FFFFFF" fill-opacity="0.05" stroke="#7C6CFF" stroke-opacity="0.5" stroke-width="2"/><path d="M300 604 V630 L600 678 L900 630 V604"
+            fill="#FFFFFF" fill-opacity="0.04" stroke="#7C6CFF" stroke-opacity="0.3" stroke-width="1.5"/><rect x="530" y="599" width="140" height="9" rx="4.5" fill="#7C6CFF" fill-opacity="0.85"/><path d="M600 438 L900 486 L600 534 L300 486 Z"
+            fill="#FFFFFF" fill-opacity="0.068" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/><path d="M300 486 V512 L600 560 L900 512 V486"
+            fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.108" stroke-width="1.5"/><rect x="530" y="481" width="140" height="9" rx="4.5" fill="#E8ECF6" fill-opacity="0.35"/><path d="M600 320 L900 368 L600 416 L300 368 Z"
+            fill="#FFFFFF" fill-opacity="0.086" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/><path d="M300 368 V394 L600 442 L900 394 V368"
+            fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.108" stroke-width="1.5"/><rect x="530" y="363" width="140" height="9" rx="4.5" fill="#E8ECF6" fill-opacity="0.35"/><path d="M600 202 L900 250 L600 298 L300 250 Z"
+            fill="#FFFFFF" fill-opacity="0.104" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="2"/><path d="M300 250 V276 L600 324 L900 276 V250"
+            fill="#FFFFFF" fill-opacity="0.04" stroke="#22D3EE" stroke-opacity="0.3" stroke-width="1.5"/><rect x="530" y="245" width="140" height="9" rx="4.5" fill="#22D3EE" fill-opacity="0.85"/>
+</svg>

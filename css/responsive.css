@@ -1,0 +1,400 @@
+/*******************************************************
+    File Description : Main Reaposive file
+*******************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.navbar-light .navbar-brand {
+		margin-left: 0;
+		margin-right: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		position: relative;
+		top: -5px;
+		left: -10px;
+	}
+
+	.navbar-area.is-sticky .navbar-light .navbar-brand {
+		margin-left: 0;
+		margin-right: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	.site-nav .navbar .navbar-nav .nav-item a {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.other-option {
+		display: none;
+	}
+	.navbar-area {
+		-webkit-box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+		box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+	}
+
+	.navbar-area.is-sticky .site-responsive-nav .mean-container a.meanmenu-reveal {
+		padding-top: 0;
+		color: #000000;
+	}
+
+	.navbar-area.is-sticky .site-responsive-nav .mean-container a.meanmenu-reveal span {
+		background: #000000;
+	}
+
+	.mean-container .mean-nav {
+		margin-top: 43px;
+	}
+
+	.site-responsive-nav .mean-container a.meanmenu-reveal {
+		color: #fff;
+	}
+
+	.site-responsive-nav .mean-container a.meanmenu-reveal span {
+		background: #fff;
+	}
+	.home-area {
+		padding-top: 170px;
+		padding-bottom: 40px;
+	}
+	.home-area .home-content {
+		text-align: center;
+	}
+	.home-area .home-content h1 {
+		font-size: 35px;
+	}
+	.home-area .home-content p {
+		font-size: 15px;
+		line-height: 1.3;
+	}
+	.about-content {
+		margin-top: 35px;
+	}
+	.app-number-count {
+		padding: 30px 20px;
+	}
+	.app-counter-box {
+		margin-bottom: 30px;
+	}
+	.app-counter-box:last-child {
+		margin-bottom: 0px;
+	}
+	.how-works-images {
+		margin-top: 35px;
+	}
+	.faq-img {
+		margin-top: 35px;
+	}
+	.subscribe-info {
+		margin-bottom: 25px;
+	}
+	.footer-content.mid-content {
+		padding-left: 20px;
+	}
+	.footer-content-box {
+		margin-bottom: 30px;
+	}
+	.footer-content-box:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	
+	.other-option {
+		display: none;
+	}
+	.navbar-area {
+		-webkit-box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+		box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+	}
+
+	.navbar-area.is-sticky .site-responsive-nav .mean-container a.meanmenu-reveal {
+		padding-top: 0;
+		color: #000000;
+	}
+
+	.navbar-area.is-sticky .site-responsive-nav .mean-container a.meanmenu-reveal span {
+		background: #000000;
+	}
+
+	.mean-container .mean-nav {
+		margin-top: 43px;
+	}
+
+	.site-responsive-nav .mean-container a.meanmenu-reveal {
+		padding-top: 0;
+		color: #fff;
+	}
+
+	.site-responsive-nav .mean-container a.meanmenu-reveal span {
+		background: #fff;
+	}
+	.home-area {
+		padding-top: 170px;
+	}
+	.home-area .home-content h1 {
+		font-size: 33px;
+	}
+	.home-area .home-content p {
+		font-size: 15px;
+		line-height: 1.5;
+	}
+	.about-content {
+		margin-top: 35px;
+	}
+	.app-number-count {
+		padding: 30px 20px;
+	}
+	.app-counter-box {
+		margin-bottom: 30px;
+	}
+	.app-counter-box:last-child {
+		margin-bottom: 0px;
+	}
+	.how-works-images {
+		margin-top: 35px;
+	}
+	.faq-img {
+		margin-top: 35px;
+	}
+	.subscribe-info {
+		margin-bottom: 25px;
+	}
+	.footer-content.mid-content {
+		padding-left: 20px;
+	}
+	.footer-content-box {
+		margin-bottom: 30px;
+	}
+	.footer-content-box:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+
+@media only screen and (max-width: 479px) {
+	.home-area {
+		padding-top: 170px;
+	}
+	.home-area .home-content h1 {
+		font-size: 28px;
+		line-height: 1.5;
+	}
+	.home-area .home-content p {
+		font-size: 17px;
+		line-height: 1.6;
+	}
+	.about-content {
+		margin-top: 35px;
+	}
+	.about-content-text h2 {
+		font-size: 27px;
+	}
+	.app-number-count {
+		padding: 30px 20px;
+	}
+	.app-counter-box {
+		margin-bottom: 30px;
+	}
+	.app-counter-box:last-child {
+		margin-bottom: 0px;
+	}
+	.how-works-content h2 {
+		font-size: 27px;
+	}
+	.working-info {
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+	.how-works-images {
+		margin-top: 35px;
+	}
+	.screenshort-slide-content .screenshort-item img {
+		border: 10px solid #eff1f9;
+	}
+	.testimonial-area>img {
+		top: 140px;
+	}
+	.faq-img {
+		margin-top: 35px;
+	}
+	.download-content h2 {
+		font-size: 20px;
+	}
+	.download-content .download-btn .app-link-btn-1 {
+		margin-right: 10px;
+		margin-bottom: 20px;
+		display: inline-block;
+	}
+	.contact-form-box {
+		padding: 0;
+		background: transparent;
+		box-shadow: unset;
+	}
+	.subscribe-wrap {
+		padding: 25px 0px;
+	}
+	.subscribe-info {
+		margin-bottom: 25px;
+	}
+	.subscribe-form .fa-envelope {
+		top: 17%;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.subscribe-form .submit-btn {
+		position: inherit;
+		top: auto;
+		right: auto;
+		margin-top: 20px;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.footer-content.mid-content {
+		padding-left: 0px;
+	}
+	.footer-content-box {
+		margin-bottom: 30px;
+	}
+	.footer-content-box:last-child {
+		margin-bottom: 0px;
+	}
+	/* blog details css */
+	.comments-area .comment-respond .comment-form-author {
+		float: left;
+		width: 100%;
+		padding-right: 0;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.comments-area .comment-respond .comment-form-email {
+		float: left;
+		width: 100%;
+		padding-left: 0;
+		margin-bottom: 20px;
+	}
+}
+
+
+@media screen and (max-width: 320px) and (min-width: 0px){
+	.section-title h2 {
+		font-size: 30px;
+	}
+	.home-area {
+		padding-top: 150px;
+	}
+	.home-area .home-content h1 {
+		font-size: 30px;
+		line-height: 1.5;
+	}
+	.home-area .home-content p {
+		font-size: 17px;
+		line-height: 1.6;
+	}
+	.about-content {
+		margin-top: 35px;
+	}
+	.about-content-text h2 {
+		font-size: 27px;
+	}
+	.app-number-count {
+		padding: 30px 20px;
+	}
+	.app-counter-box {
+		margin-bottom: 30px;
+	}
+	.app-counter-box:last-child {
+		margin-bottom: 0px;
+	}
+	.how-works-content h2 {
+		font-size: 27px;
+	}
+	.working-info {
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+	.how-works-images {
+		margin-top: 35px;
+	}
+	.screenshort-slide-content .screenshort-item img {
+		border: 10px solid #eff1f9;
+	}
+	.testimonial-area>img {
+		top: 140px;
+	}
+	.faq-img {
+		margin-top: 35px;
+	}
+	.download-content h2 {
+		font-size: 20px;
+	}
+	.download-content .download-btn .app-link-btn-1 {
+		margin-right: 10px;
+		margin-bottom: 20px;
+		display: inline-block;
+	}
+	.contact-form-box {
+		padding: 0;
+		background: transparent;
+		box-shadow: unset;
+	}
+	.subscribe-wrap {
+		padding: 25px 0px;
+	}
+	.subscribe-info {
+		margin-bottom: 25px;
+	}
+	.subscribe-form .fa-envelope {
+		top: 17%;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.subscribe-form .submit-btn {
+		position: inherit;
+		top: auto;
+		right: auto;
+		margin-top: 20px;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.footer-content.mid-content {
+		padding-left: 0px;
+	}
+	.footer-content-box {
+		margin-bottom: 30px;
+	}
+	.footer-content-box:last-child {
+		margin-bottom: 0px;
+	}
+	/* blog details css */
+	.comments-area .comment-respond .comment-form-author {
+		float: left;
+		width: 100%;
+		padding-right: 0;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.comments-area .comment-respond .comment-form-email {
+		float: left;
+		width: 100%;
+		padding-left: 0;
+		margin-bottom: 20px;
+	}
+
+}

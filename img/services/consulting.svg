@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+<defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B0E17"/><stop offset="1" stop-color="#141A2B"/>
+    </linearGradient>
+    <radialGradient id="auroraC"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="auroraV"><stop offset="0" stop-color="#7C6CFF" stop-opacity="0.30"/><stop offset="1" stop-color="#7C6CFF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="fade"><rect width="1200" height="900" fill="url(#fadeGrad)"/></mask>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#7C6CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#ground)"/>
+  <ellipse cx="234" cy="258" rx="624" ry="414" fill="url(#auroraC)"/>
+  <ellipse cx="928" cy="577" rx="552" ry="378" fill="url(#auroraV)"/>
+  <rect width="1200" height="900" fill="url(#grid)" mask="url(#fade)"/>
+<rect x="120" y="140" width="960" height="620" rx="14" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.14"/><rect x="180" y="230" width="170" height="100" rx="12" fill="#FFFFFF" fill-opacity="0.06" stroke="#22D3EE" stroke-opacity="0.45" stroke-width="2"/><rect x="206" y="262" width="96" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+  <rect x="206" y="282" width="64" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/><rect x="180" y="430" width="170" height="100" rx="12" fill="#FFFFFF" fill-opacity="0.06" stroke="#22D3EE" stroke-opacity="0.45" stroke-width="2"/><rect x="206" y="462" width="110" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+  <rect x="206" y="482" width="72" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/><rect x="760" y="320" width="180" height="110" rx="12" fill="#FFFFFF" fill-opacity="0.06" stroke="#7C6CFF" stroke-opacity="0.5" stroke-width="2"/><rect x="788" y="356" width="110" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+  <rect x="788" y="376" width="78" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/><path d="M540 300 L620 380 L540 460 L460 380 Z" fill="#FFFFFF" fill-opacity="0.06" stroke="#22D3EE" stroke-opacity="0.6" stroke-width="2.5"/><path d="M512 380l20 20 38 -42" fill="none" stroke="#22D3EE" stroke-opacity="1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M350 280 C410 280 420 340 460 372" fill="none" stroke="#E8ECF6" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M350 480 C410 480 420 420 460 390" fill="none" stroke="#E8ECF6" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M620 380 H752" fill="none" stroke="#E8ECF6" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M738 372l16 8-16 8" fill="none" stroke="#E8ECF6" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M540 460 V600 H760" fill="none" stroke="#4A5570" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 9"/><path d="M782 588l-22 12 22 12" fill="none" stroke="#4A5570" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="806" cy="600" r="24" fill="none" stroke="#4A5570" stroke-opacity="0.7" stroke-width="2"/><path d="M796 590l20 20M816 590l-20 20" fill="none" stroke="#4A5570" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="180" y="640" width="150" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+  <rect x="180" y="664" width="210" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+  <rect x="180" y="688" width="120" height="7" rx="3.5" fill="#4A5570" fill-opacity="1"/>
+</svg>

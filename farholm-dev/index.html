@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Farholm — Development — NimbleJinn</title>
+  <meta name="description" content="Development detail for Farholm, a space-mercenary roguelite from NimbleJinn LLC: the crew, the contracts, the galaxy, and the simulation underneath." />
+  <meta name="keywords" content="game development, mobile development, SaaS, AI development, software consulting" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NimbleJinn LLC" />
+  <meta property="og:title" content="Farholm — Development — NimbleJinn" />
+  <meta property="og:description" content="Development detail for Farholm, a space-mercenary roguelite from NimbleJinn LLC: the crew, the contracts, the galaxy, and the simulation underneath." />
+  <meta property="og:image" content="/img/brand/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: Space Grotesk (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/img/brand/mark.svg" />
+
+  <!-- Base template stylesheets -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/animate.min.css" rel="stylesheet" />
+  <link href="/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/themify-icons.css" rel="stylesheet" />
+  <link href="/css/magnific-popup.css" rel="stylesheet" />
+  <link href="/css/owl.carousel.min.css" rel="stylesheet" />
+  <link href="/css/owl.theme.default.min.css" rel="stylesheet" />
+  <link href="/css/meanmenu.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <link href="/css/responsive.css" rel="stylesheet" />
+  <!-- NimbleJinn theme layer — always last -->
+  <link href="/css/theme.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- The base template's preloader is deliberately omitted: it veils the whole
+       page until a JS load handler clears it, so any script failure leaves the
+       site blank. A static site has nothing to preload. -->
+
+  <!-- Start Navbar Area -->
+  <div class="navbar-area">
+    <div class="site-responsive-nav">
+      <div class="container">
+        <div class="site-responsive-menu">
+          <div class="logo">
+            <a class="brand-lockup" href="/index.html">
+              <img src="/img/brand/mark.svg" class="brand-mark" alt="">
+              <span class="brand-word">NimbleJinn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-nav">
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a class="navbar-brand brand-lockup" href="/index.html" aria-label="NimbleJinn LLC">
+            <img src="/img/brand/mark.svg" class="brand-mark" alt="">
+            <span class="brand-word">NimbleJinn</span>
+          </a>
+
+          <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" style="display: block;">
+	<ul class="navbar-nav">
+
+		<li class="nav-item top" id="Home">
+			<a class="nav-link" href="/index.html">Home<i class="fa"></i></a>
+		</li>
+
+		<li class="nav-item top" id="Services">
+			<a class="nav-link" href="/services/index.html">Services<i class="fa fa-chevron-down"></i></a>
+			<ul class="dropdown-menu">
+				<li class="nav-item"><a class="nav-link" href="/services/index.html#game">Game Development</a></li>
+				<li class="nav-item"><a class="nav-link" href="/services/index.html#mobile">Mobile Development</a></li>
+				<li class="nav-item"><a class="nav-link" href="/services/index.html#saas">SaaS &amp; Cloud Platforms</a></li>
+				<li class="nav-item"><a class="nav-link" href="/services/index.html#ai">AI &amp; Machine Learning</a></li>
+				<li class="nav-item"><a class="nav-link" href="/services/index.html#consulting">Consulting &amp; Advisory</a></li>
+			</ul>
+		</li>
+
+		<li class="nav-item top" id="Work">
+			<a class="nav-link" href="/work/index.html">Work<i class="fa fa-chevron-down"></i></a>
+			<ul class="dropdown-menu">
+				<li class="nav-item"><a class="nav-link" href="/work/index.html#studio">The Studio</a></li>
+				<li class="nav-item"><a class="nav-link" href="/work/index.html#engage">How We Engage</a></li>
+				<li class="nav-item"><a class="nav-link" href="/work/index.html#industries">Industries</a></li>
+				<!-- Swap site.gamePage in site.config.js to promote the full
+				     development page in place of the teaser. -->
+				<li class="nav-item"><a class="nav-link" href="/farholm/index.html">Farholm</a></li>
+			</ul>
+		</li>
+
+		<li class="nav-item top" id="Approach">
+			<a class="nav-link" href="/approach/index.html">Approach<i class="fa fa-chevron-down"></i></a>
+			<ul class="dropdown-menu">
+				<li class="nav-item"><a class="nav-link" href="/approach/index.html#process">How We Work</a></li>
+				<li class="nav-item"><a class="nav-link" href="/approach/index.html#stack">Technology &amp; Stack</a></li>
+				<li class="nav-item"><a class="nav-link" href="/approach/index.html#quality">Quality &amp; Delivery</a></li>
+			</ul>
+		</li>
+
+		<li class="nav-item top" id="About">
+			<a class="nav-link" href="/about/index.html">About<i class="fa fa-chevron-down"></i></a>
+			<ul class="dropdown-menu">
+				<li class="nav-item"><a class="nav-link" href="/about/index.html#story">Our Story</a></li>
+				<li class="nav-item"><a class="nav-link" href="/about/index.html#principles">Principles</a></li>
+				<li class="nav-item"><a class="nav-link" href="/about/index.html#team">Team</a></li>
+				<li class="nav-item"><a class="nav-link" href="/careers/index.html">Careers</a></li>
+			</ul>
+		</li>
+
+	</ul>
+	<div class="other-option">
+		<a href="/contact/index.html" class="button mr-0 nav-download-btn">Contact Us</a>
+	</div>
+</div>
+
+
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- End Navbar Area -->
+
+  
+  
+  <!-- Start Page Title Area -->
+  <div class="page-title-area" style="background-image:url(/img/farholm/heading.svg)">
+    <div class="d-table">
+      <div class="d-table-cell">
+        <div class="container">
+          <div class="page-title-content">
+            <span class="pill">In development</span>
+            <h2>Farholm</h2>
+            
+            <div>A space-mercenary roguelite about a small crew you come to love, and the risk of losing them.</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Page Title Area -->
+  
+
+  <div class="bg-shape-wrapper">
+    
+
+<!-- A full-bleed ink band follows, so this keeps some bottom padding rather
+     than the zero used where a light section comes next. -->
+<section class="section-padding" style="padding-bottom:56px">
+  <div class="container">
+    <p class="lead-text">You run a mercenary company out of a mothership you own outright — no bank, no mortgage, no repo-man. The ship is home. You sign contracts, fly to far-flung systems, fight through missions with a handful of named operators, salvage what you can, pay your people their shares, and come back to Farholm.</p>
+    <hr class="accent-rule">
+    <p class="lead-text">Some of them don't come back. When an operator dies, they are gone forever — their bunk stays empty, their name goes to the memorial wall. Permadeath is a founding pillar, not a difficulty option.</p>
+  </div>
+</section>
+
+
+
+<section class="ink-surface band band-tight">
+    <div class="container">
+        
+        <div class="section-title">
+            <h5>Farholm</h5>
+            <h2><a id="name">The name, and the place</a></h2>
+        </div>
+        
+        
+<p><span class="keyword">Farholm</span> is the game's title and also a place in it — the station you call home. It is a Norse-flavoured coinage: <em>holm</em> is a small island. Spoken aloud in English it sounds like "far home." Both readings are the game: a small island of warmth, far away, that you keep leaving and coming back to.</p>
+<p>The station is an anchored deep-space home, the origin of every run, and it carries every service the company needs. It is deliberately one place, for now.</p>
+    </div>
+</section>
+
+
+
+<!-- IMAGE PROMPT: Generate a high-resolution PNG image (landscape orientation, 1200x900px) of a clean, readable star-system diagram rendered as a dark UI: a central star with concentric elliptical orbit rings, planets and moons as simple markers on those rings, small text labels, and a slight orrery-like tilt for depth. Cyan and violet accents on near-black. This is a functional map interface, not illustration. IMPORTANT: no particular art style should be implied — keep it schematic and restrained. -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>The universe</h5>
+            <h2><a id="galaxy">One persistent galaxy</a></h2>
+        </div>
+        
+<div class="side-image">
+  <div>
+<p>There is one galaxy, and it outlives every run. You do not get a fresh universe each campaign — the company lives somewhere real. A run is an <em>expedition</em>: the company takes a contract and deploys to a theater of operations, the way real mercenary outfits deploy. When the contract ends, the galaxy is still there, and what you did in it is remembered. A looted vault stays looted. A unique character found once is never found twice.</p>
+<p>Star systems are the map's nodes — a star with planets on orbit rings, moons, and stations. Within a system, locations are the places you can actually dock at: a station's interior, scattered sites on a planet's surface. What a location offers is its facilities — a market, a medical bay, a recruitment hall, a shipyard — and a system's services show on the map, so "is this worth docking at?" is answerable at a glance.</p>
+<p>Civilisation has a gradient, and the gradient is gameplay. Large interstellar hubs are where people concentrate: deep recruitment pools, busy markets. The frontier is the opposite — scattered facilities at lonely stations, scarce but sometimes special.</p>
+<p>The universe keeps a continuous calendar of star dates. Time advances when you travel and act; the world is older than the company and will outlive it. Costs only accrue during runs — the game never punishes you for not playing — but the world's clock is real, so the frontier you visited last month may hold someone new.</p></div>
+  <img src="/img/farholm/starmap.svg" alt="" loading="lazy"/>
+</div>
+
+    </div>
+</section>
+
+
+
+<!-- IMAGE PROMPT: Generate an evocative, high-resolution PNG image (landscape orientation, 1200x900px) of a large practical spacecraft interior seen as a top-down cutaway: compartments laid out room by room — bunks, a medical bay, a galley, a cargo hold — rendered as a clean schematic with labels, on a dark background with cyan accents. No people. Functional and diagrammatic. IMPORTANT: no particular art style should be implied. -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>The loop</h5>
+            <h2><a id="between">Between contracts</a></h2>
+        </div>
+        
+<div class="side-image reverse">
+  <div>
+<p>The loop has two modes: life <em>between</em> contracts, and life <em>under</em> one. Both happen in the same galaxy, on the same ship. What changes is the pressure.</p>
+<p>Between contracts you can fly anywhere. Visit hubs to interview recruits — hiring only works in person, so you travel to meet people. Hunt the frontier for a rare specialist. Buy equipment where it is cheap. There is no combat and no experience grinding out of a run, and income comes only from contracts, so wandering cannot break the game's balance. It exists for immersion, preparation, and the pleasure of a lived-in galaxy.</p></div>
+  <img src="/img/farholm/ship.svg" alt="" loading="lazy"/>
+</div>
+
+    </div>
+</section>
+
+
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>The run</h5>
+            <h2><a id="contract">Signing on</a></h2>
+        </div>
+        <div class="larger-text">
+<p>A run begins by accepting a <span class="keyword">scenario</span> — a campaign contract with a win condition, loss conditions, and escalating pressure. Every run carries at least a loose deadline.</p>
+<p>At signing you pick your roster, and it locks. The crew you take is the bet; there are no mid-run swaps. The ship's life support caps how many berths you have.</p>
+<p>The contract gives you a board of missions in the theater, and <span class="keyword">all of them are mandatory, in any order you like</span>. They are generated easiest-to-hardest and each wears a difficulty meter, so the deep end is visible from day one and every easy round you clear tightens the noose. You win by clearing the whole board. The deadline ticks over everything.</p>
+<p>Between missions the theater is open — travel to a rare facility, resupply, detour for repairs. Every hour is real. What you cannot do mid-run is take other work or hire crew. If a mission proves too much you can retreat, and it stays on the board waiting for you, or abandon the run entirely and accept the consequences.</p></div>
+    </div>
+</section>
+
+
+
+
+<section class="ink-surface band">
+    <div class="container">
+        
+        <div class="section-title">
+            <h5>Where it is decided</h5>
+            <h2><a id="stages">The stages</a></h2>
+        </div>
+        
+        
+<p>Each mission plays as a chain of <span class="keyword">stages</span> — real-time-with-pause tactical fights where you command your operators individually on a 2D field: move, attack, hold, withdraw.</p>
+<p>This is where people die.</p>
+<p>The simulation is fully deterministic: the same seed and the same orders produce the same outcome, every time. That matters for fairness, and it matters for verification — a quiet engineering pillar that shapes how the whole game is built and tested.</p>
+    </div>
+</section>
+
+
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>The rarest reward</h5>
+            <h2><a id="finding">Finding people</a></h2>
+        </div>
+        <div class="larger-text">
+<p>Rarely, in the middle of a run, you may <em>find</em> someone — a survivor in a cryopod, a defector. They ride with you, stowed in the cryo facility. If you win the run, bringing them into the company is part of the settlement ceremony. Miss the chance and it is gone forever: the scarcity is the thrill.</p>
+<p>It is the game's rarest and most intense reward, and it is not an item. It is a person.</p>
+<p class="keyword">Some of the detail here is still in design.</p></div>
+    </div>
+</section>
+
+
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>The economy</h5>
+            <h2><a id="money">Money, honestly</a></h2>
+        </div>
+        <div class="larger-text">
+<p>One company wallet. Mission rewards, advances that get clawed back if you quit, and operator <span class="keyword">shares</span> — each crew member takes a percentage of every mission they ride, bigger for veterans. Supplies are bought stock: ammunition, missiles, materials, fuel.</p>
+<p>The economy's job is pressure. A company too broke to fuel a mission has decisions to make.</p></div>
+    </div>
+</section>
+
+
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h5>Tone</h5>
+            <h2><a id="touchstones">Touchstones</a></h2>
+        </div>
+        <div class="larger-text">
+<p>These are the works we actually cite when we make decisions.</p>
+<ul class="tick-list">
+  <li><span class="keyword">Cowboy Bebop</span> — the found-family crew, a captain who owns his ship, humour that coexists with grief.</li>
+  <li><span class="keyword">FTL: Faster Than Light</span> — the ship as a top-down cutaway you look into, room by room.</li>
+  <li><span class="keyword">Aliens (1986)</span> — the crew biomonitor: in battle, the interface is the ship's telemetry watching your people's suits. Functional, and a little tense.</li>
+  <li><span class="keyword">Master of Orion 2</span> — clean, readable orbit-ring maps of star systems.</li>
+</ul>
+<p style="margin-top:20px">Everything visual beyond those references is deliberately open. Palette, rendering style, shape language, the look of the species — none of it is settled, and we are not going to pretend otherwise.</p></div>
+    </div>
+</section>
+
+
+<section class="section-padding" style="padding-top:0">
+  <div class="container">
+    <p class="lead-text">Farholm is in active development. There is no release date to announce yet, and we would rather say nothing than say something we have to walk back.</p>
+  </div>
+</section>
+
+
+<section class="ink-surface band band-tight cta-band">
+    <div class="container">
+        <div class="cta-inner">
+            <div>
+                <h2 class="staccato">Follow the build.</h2>
+                <p>Development notes go up as the work goes on.</p>
+            </div>
+            
+            <div class="hero-actions" style="margin-top:0">
+                
+                <a href="/devlog/index.html" class="button">Read the devlog</a>
+                
+                <a href="/contact/index.html" class="button ghost">Get in touch</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+  </div>
+
+  <!-- Start Footer Section -->
+<section class="footer-section bd-bottom pd-bottom">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 footer-content-box">
+                <div class="footer-content">
+                    <span class="brand-lockup" style="margin-bottom: 18px;">
+                        <img src="/img/brand/mark.svg" class="brand-mark" alt="">
+                        <span class="brand-word">NimbleJinn</span>
+                    </span>
+                    <p>NimbleJinn builds games, mobile apps, SaaS platforms, and AI systems — and advises the teams building their own.</p>
+                    <p style="margin-top: 16px;">Massachusetts, USA</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-content-box">
+                <div class="footer-content mid-content">
+                    <h3>Company</h3>
+                    <ul class="footer-link">
+                        <li><a href="/services/index.html">Services</a></li>
+                        <li><a href="/work/index.html">Work</a></li>
+                        <li><a href="/approach/index.html">Approach</a></li>
+                        <li><a href="/about/index.html">About</a></li>
+                        <li><a href="/careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-content-box">
+                <div class="footer-content mid-content">
+                    <h3>More</h3>
+                    <ul class="footer-link">
+                        <li><a href="/farholm/index.html">Farholm</a></li>
+                        <li><a href="/contact/index.html">Contact Us</a></li>
+                        <li><a href="/terms/index.html">Terms &amp; Conditions</a></li>
+                        <li><a href="/privacy/index.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-content-box">
+                <div class="footer-content">
+                    <h3>Contact</h3>
+                    <!-- No icon glyphs here: the labels already say what these
+                         are, and dropping them removes a webfont dependency. -->
+                    <div class="footer-info-contact">
+                        <h6>Email</h6>
+                        <span><a href="mailto:contact@nimblejinn.com">contact@nimblejinn.com</a></span>
+                    </div>
+                    <div class="footer-info-contact">
+                        <h6>Phone</h6>
+                        <span><a href="tel:+16179057824">+1 617-905-7824</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class="footer-bottom align-center">
+    <div class="container">
+        <p>&copy; NimbleJinn LLC. All rights reserved.</p>
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+
+  <!-- Back to Top -->
+  <div class="back-to-top"><i class="fa fa-caret-up"></i><i class="fa fa-caret-up"></i></div>
+
+  <script src="/js/jquery-3.5.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/plugins.js"></script>
+  <script src="/js/jquery.meanmenu.js"></script>
+  <script src="/js/main.js"></script>
+
+<script>
+  (function() {
+    const ws = new WebSocket(`ws://${location.host}`);
+    ws.onmessage = () => location.reload();
+  })();
+</script>
+</body>
+</html>

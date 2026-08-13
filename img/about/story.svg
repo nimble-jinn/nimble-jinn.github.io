@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+<defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B0E17"/><stop offset="1" stop-color="#141A2B"/>
+    </linearGradient>
+    <radialGradient id="auroraC"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="auroraV"><stop offset="0" stop-color="#7C6CFF" stop-opacity="0.30"/><stop offset="1" stop-color="#7C6CFF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="fade"><rect width="1200" height="900" fill="url(#fadeGrad)"/></mask>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#7C6CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#ground)"/>
+  <ellipse cx="258" cy="296" rx="624" ry="414" fill="url(#auroraC)"/>
+  <ellipse cx="812" cy="782" rx="552" ry="378" fill="url(#auroraV)"/>
+  <rect width="1200" height="900" fill="url(#grid)" mask="url(#fade)"/>
+<circle cx="170" cy="220" r="12" fill="#22D3EE" fill-opacity="0.85"/><path d="M192 220 C360 220 400 450 540 450" fill="none" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="214" y="196" width="0" height="0" rx="0" fill="#4A5570" fill-opacity="1"/><circle cx="170" cy="380" r="12" fill="#7C6CFF" fill-opacity="0.85"/><path d="M192 380 C360 380 400 450 540 450" fill="none" stroke="#7C6CFF" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="214" y="356" width="0" height="0" rx="0" fill="#4A5570" fill-opacity="1"/><circle cx="170" cy="540" r="12" fill="#22D3EE" fill-opacity="0.85"/><path d="M192 540 C360 540 400 450 540 450" fill="none" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="214" y="516" width="0" height="0" rx="0" fill="#4A5570" fill-opacity="1"/><circle cx="170" cy="700" r="12" fill="#7C6CFF" fill-opacity="0.85"/><path d="M192 700 C360 700 400 450 540 450" fill="none" stroke="#7C6CFF" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="214" y="676" width="0" height="0" rx="0" fill="#4A5570" fill-opacity="1"/><rect x="560" y="330" width="240" height="240" rx="56" fill="url(#accent)" fill-opacity="0.9"/><path d="M626 508 V410 L710 494 V434" fill="none" stroke="#0B0E17" stroke-opacity="1" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/><rect x="710" y="360" width="34" height="34" rx="8" fill="#0B0E17" transform="rotate(45 727 377)"/><path d="M800 450 H1050" fill="none" stroke="#E8ECF6" stroke-opacity="0.4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1034 442l16 8-16 8" fill="none" stroke="#E8ECF6" stroke-opacity="0.4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
